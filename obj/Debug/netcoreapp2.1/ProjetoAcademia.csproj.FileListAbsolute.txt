@@ -37,3 +37,7 @@ C:\xampp\htdocs\ProjetoAcademia\ProjetoAcademia\obj\Debug\netcoreapp2.1\Razor\Vi
 C:\xampp\htdocs\ProjetoAcademia\ProjetoAcademia\obj\Debug\netcoreapp2.1\Razor\Views\Objetivo\Create.g.cshtml.cs
 C:\xampp\htdocs\ProjetoAcademia\ProjetoAcademia\obj\Debug\netcoreapp2.1\Razor\Views\Objetivo\Edit.g.cshtml.cs
 C:\xampp\htdocs\ProjetoAcademia\ProjetoAcademia\obj\Debug\netcoreapp2.1\Razor\Views\Objetivo\Index.g.cshtml.cs
+C:\xampp\htdocs\ProjetoAcademia\ProjetoAcademia\obj\Debug\netcoreapp2.1\ProjetoAcademia.csprojAssemblyReference.cache
+C:\xampp\htdocs\ProjetoAcademia\ProjetoAcademia\obj\Debug\netcoreapp2.1\Razor\Views\Aluno\Create.g.cshtml.cs
+C:\xampp\htdocs\ProjetoAcademia\ProjetoAcademia\obj\Debug\netcoreapp2.1\Razor\Views\Aluno\Edit.g.cshtml.cs
+C:\xampp\htdocs\ProjetoAcademia\ProjetoAcademia\obj\Debug\netcoreapp2.1\Razor\Views\Aluno\Index.g.cshtml.cs

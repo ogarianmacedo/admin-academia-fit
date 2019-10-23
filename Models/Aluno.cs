@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ProjetoAcademia.Models
 {
@@ -10,6 +11,7 @@ namespace ProjetoAcademia.Models
         public int AlunoId {get; set;}
 
         [Required(ErrorMessage = "Campo obrigatório.")]
+        [Remote("AlunoExiste", "Aluno", AdditionalFields = "AlunoId")]
         public string NomeCompleto {get; set;}
 
         [Required(ErrorMessage = "Campo obrigatório.")]
