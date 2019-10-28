@@ -71,7 +71,7 @@ using ProjetoAcademia.Models;
             WriteLiteral("\r\n<div class=\"row\">\r\n    <div class=\"col s10\">\r\n        <h5>Fichas Cadastradas</h5>\r\n    </div>\r\n    <div class=\"col s2\">\r\n        <p>\r\n            ");
             EndContext();
             BeginContext(254, 140, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ec2bbcd2a0d649a7908c6f7c1c919a63", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ffd6a61c1cc412a8fc420fa140d267e", async() => {
                 BeginContext(350, 40, true);
                 WriteLiteral("\r\n                Add Novo\r\n            ");
                 EndContext();
@@ -196,7 +196,7 @@ using ProjetoAcademia.Models;
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(1568, 113, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa33e8e02c6d4c1aacfdd2433c62e08c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c776a8460bdb4c33aa383eba110a0402", async() => {
                 BeginContext(1667, 10, true);
                 WriteLiteral("Visualizar");
                 EndContext();
@@ -232,7 +232,7 @@ using ProjetoAcademia.Models;
             WriteLiteral("\r\n\r\n                    ");
             EndContext();
             BeginContext(1705, 175, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a097f895d9964bd48322bb2322ba95d7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bc1451fb9ca4d548b58b2084e20bc86", async() => {
                 BeginContext(1866, 10, true);
                 WriteLiteral("Exercicios");
                 EndContext();
@@ -279,7 +279,7 @@ using ProjetoAcademia.Models;
             WriteLiteral("\r\n\r\n                    ");
             EndContext();
             BeginContext(1904, 194, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8fed86602fbc4184b473da041594dbe0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7cfdfd46e00a40fb94417b34c28e7769", async() => {
                 BeginContext(2009, 85, true);
                 WriteLiteral("\r\n                        <i class=\"material-icons\">archive</i>\r\n                    ");
                 EndContext();
@@ -315,7 +315,7 @@ using ProjetoAcademia.Models;
             WriteLiteral("\r\n\r\n                    ");
             EndContext();
             BeginContext(2122, 198, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "151958ba2f8d43dca816b6e1ad82ca23", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a562f90604bd4898a9b3c85e4f4140fa", async() => {
                 BeginContext(2232, 84, true);
                 WriteLiteral("\r\n                        <i class=\"material-icons\">create</i>\r\n                    ");
                 EndContext();

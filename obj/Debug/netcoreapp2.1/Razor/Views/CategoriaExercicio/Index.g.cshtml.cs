@@ -66,7 +66,7 @@ using ProjetoAcademia.Models;
             WriteLiteral("\r\n<div class=\"row\">\r\n    <div class=\"col s10\">\r\n        <h5>Categorias Cadastrados</h5>\r\n    </div>\r\n    <div class=\"col s2\">\r\n        <p>\r\n            ");
             EndContext();
             BeginContext(275, 104, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ddf1e15a52143bb854b1d938221258f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12b27f3c8fde41e58f6354113407b472", async() => {
                 BeginContext(335, 40, true);
                 WriteLiteral("\r\n                Add Novo\r\n            ");
                 EndContext();
@@ -118,7 +118,7 @@ using ProjetoAcademia.Models;
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(913, 200, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc4ae9f420884d808719768ba14b4b7d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59badc34c21d48e28b90f4d645d0a027", async() => {
                 BeginContext(1025, 84, true);
                 WriteLiteral("\r\n                        <i class=\"material-icons\">create</i>\r\n                    ");
                 EndContext();

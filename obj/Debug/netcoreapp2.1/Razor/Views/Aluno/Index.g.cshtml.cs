@@ -69,7 +69,7 @@ using ProjetoAcademia.Models;
             WriteLiteral("\r\n<div class=\"row\">\r\n    <div class=\"col s10\">\r\n        <h5>Alunos Cadastrados</h5>\r\n    </div>\r\n    <div class=\"col s2\">\r\n        <p>\r\n            ");
             EndContext();
             BeginContext(254, 104, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e87443fc5c640409f7116ac5a59a021", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b90fe967ccfe4a438f412d0a3d3698c5", async() => {
                 BeginContext(314, 40, true);
                 WriteLiteral("\r\n                Add Novo\r\n            ");
                 EndContext();
@@ -194,7 +194,7 @@ using ProjetoAcademia.Models;
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(1750, 130, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b8509f77a128446eaad7ee4dddfec45f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "84d74106d56442b284c3698534ccaca0", async() => {
                 BeginContext(1870, 6, true);
                 WriteLiteral("Fichas");
                 EndContext();
@@ -232,7 +232,7 @@ using ProjetoAcademia.Models;
             WriteLiteral("\r\n\r\n                    ");
             EndContext();
             BeginContext(1904, 193, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20e16af3352d431b89e35bfc1ae7e0a8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f83e9fd22774f8c9d9acf91cb88b24e", async() => {
                 BeginContext(2009, 84, true);
                 WriteLiteral("\r\n                        <i class=\"material-icons\">create</i>\r\n                    ");
                 EndContext();
