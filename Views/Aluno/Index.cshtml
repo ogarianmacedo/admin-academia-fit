@@ -67,7 +67,9 @@
                     @Html.DisplayFor(modelItem => item.FrequenciaSemanal)
                 </td>
                 <td>
-                    <a asp-action="Index" asp-controller="Ficha" asp-route-AlunoId="@item.AlunoId" class="btn btn-small btn amber darken-3">Fichas</a>
+                    <a asp-action="Index" asp-controller="Ficha" asp-route-AlunoId="@item.AlunoId" class="btn btn-small btn-floating teal darken-4" title="Visualizar fichas de treino do aluno.">
+                        <i class="material-icons">remove_red_eye</i>
+                    </a>
 
                     <a asp-action="Edit" asp-route-id="@item.AlunoId" class="btn btn-small btn-floating light-blue darken-4">
                         <i class="material-icons">create</i>

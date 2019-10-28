@@ -107,10 +107,10 @@ namespace ProjetoAcademia.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<JsonResult> Delete(int id)
         {
             await _repositorio.Excluir(id);
-            return RedirectToAction(nameof(Index));
+            return Json("Professor excluído com sucesso.");
         }
 
         public async Task<JsonResult> ProfessorExiste(string Nome, int ProfessorId)

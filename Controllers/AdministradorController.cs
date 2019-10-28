@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoAcademia.Interfaces;
@@ -57,6 +58,7 @@ namespace ProjetoAcademia.Controllers
             return RedirectToAction("Index", "Professor");
         }
 
+        [Authorize]
         public async Task<IActionResult> Sair()
         {
             await HttpContext.SignOutAsync();

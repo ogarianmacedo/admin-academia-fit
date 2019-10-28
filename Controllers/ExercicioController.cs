@@ -16,16 +16,57 @@ namespace ProjetoAcademia.Controllers
     {
         private readonly IExercicioRepositorio _repositorio;
         private readonly ICategoriaExercicioRepositorio _catRepositorio;
+        private readonly IListaExercicioRepositorio _listaRepositorio;
 
-        public ExercicioController(IExercicioRepositorio repositorio, ICategoriaExercicioRepositorio catRepositorio)
+        public ExercicioController(
+            IExercicioRepositorio repositorio, 
+            ICategoriaExercicioRepositorio catRepositorio,
+            IListaExercicioRepositorio listaRepositorio
+        )
         {
             _repositorio = repositorio;
             _catRepositorio = catRepositorio;
+            _listaRepositorio = listaRepositorio;
         }
 
         public async Task<IActionResult> Index()
         {
             return View(await _repositorio.BuscarTodos());
+        }
+
+        public async Task<IActionResult> Listagem(int FichaId, int AlunoId)
+        {
+            ViewData["FichaId"] = FichaId;
+            ViewData["AlunoId"] = AlunoId;
+
+            return View(await _repositorio.BuscarTodos());
+        }
+
+        public async Task<IActionResult> AdicionarExercicio(int ExercicioId, int frequencia, int repeticoes, int carga, int FichaId)
+        {
+            if(await _listaRepositorio.ExisteExercicioFicha(ExercicioId, FichaId))
+            {
+                return Json(false);
+            }
+
+            ListaExercicio lista = new ListaExercicio
+            {
+                ExercicioId = ExercicioId,
+                Frequencia = frequencia,
+                Repeticoes = repeticoes,
+                Carga = carga,
+                FichaId = FichaId
+            };
+
+            if (ModelState.IsValid)
+            {
+                await _listaRepositorio.Inserir(lista);
+                return Json(true);
+            }
+            else
+            {
+                return Json(false);
+            }
         }
 
         public async Task<IActionResult> Create()
@@ -77,10 +118,10 @@ namespace ProjetoAcademia.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<JsonResult> Delete(int id)
         {
             await _repositorio.Excluir(id);
-            return RedirectToAction(nameof(Index));
+            return Json("Exercício excluído com sucesso.");
         }
 
         public async Task<JsonResult> ExercicioExiste(string nome, int ExercicioId)

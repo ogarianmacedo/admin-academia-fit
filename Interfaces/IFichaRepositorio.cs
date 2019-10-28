@@ -10,7 +10,7 @@ namespace ProjetoAcademia.Interfaces
     {
         Task<IEnumerable<Ficha>> BuscarTodasFichasPeloAlunoId(int id);
 
-        Task<Ficha> BuscarFichaPeloAlunoId(int id);
+        Task<Ficha> BuscarFichaAlunoPorId(int id);
 
         Task<bool> BuscaFichaPorNome(string Nome);
 

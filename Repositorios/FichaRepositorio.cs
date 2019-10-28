@@ -22,9 +22,9 @@ namespace ProjetoAcademia.Repositorios
             return await _contexto.Fichas.AnyAsync(f => f.Nome == Nome);
         }
 
-        public async Task<Ficha> BuscarFichaPeloAlunoId(int id)
+        public async Task<Ficha> BuscarFichaAlunoPorId(int id)
         {
-            return await _contexto.Fichas.Include(f => f.Aluno).FirstOrDefaultAsync(f => f.AlunoId == id);
+            return await _contexto.Fichas.Include(f => f.Aluno).FirstOrDefaultAsync(f => f.FichaId == id);
         }
 
         public async Task<IEnumerable<Ficha>> BuscarTodasFichasPeloAlunoId(int id)

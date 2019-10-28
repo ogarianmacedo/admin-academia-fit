@@ -55,19 +55,23 @@
                     @Html.DisplayFor(modelItem => item.Aluno.NomeCompleto)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-FichaId="@item.FichaId" class="btn btn-small btn amber darken-3">Visualizar</a>
+                    <a asp-action="Details" asp-route-FichaId="@item.FichaId" class="btn btn-small btn-floating teal darken-4" title="Visualizar detalhes da ficha.">
+                        <i class="material-icons">details</i>
+                    </a>
 
-                    <a asp-action="Listagem" asp-controller="Exercicio" asp-route-FichaId="@item.FichaId" asp-route-AlunoId="@item.AlunoId" class="btn btn-small btn amber darken-3">Exercicios</a>
+                    <a asp-action="Listagem" asp-controller="Exercicio" asp-route-FichaId="@item.FichaId" asp-route-AlunoId="@item.AlunoId" class="btn btn-small btn-floating amber darken-4" title="Visualizar e adicionar novos exercícios.">
+                        <i class="material-icons">directions_run</i>
+                    </a>
 
-                    <a asp-action="VisualizarPDF" asp-route-FichaId="@item.FichaId" class="btn btn-small btn amber darken-3">
+                    <a asp-action="VisualizarPDF" asp-route-FichaId="@item.FichaId" class="btn btn-small btn-floating indigo darken-4" title="Download .PDF da ficha.">
                         <i class="material-icons">archive</i>
                     </a>
 
-                    <a asp-action="Edit" asp-route-FichaId="@item.FichaId" class="btn btn-small btn-floating light-blue darken-4">
+                    <a asp-action="Edit" asp-route-FichaId="@item.FichaId" class="btn btn-small btn-floating light-blue darken-4" title="Alterar nome da ficha.">
                         <i class="material-icons">create</i>
                     </a>
 
-                    <a onclick="ExibirModal(@item.FichaId, '@item.Nome')" class="btn btn-small btn-floating red darken-4">
+                    <a onclick="ExibirModal(@item.FichaId, '@item.Nome')" class="btn btn-small btn-floating red darken-4" title="Excluir a ficha.">
                         <i class="material-icons">delete_forever</i>
                     </a>
                 </td>

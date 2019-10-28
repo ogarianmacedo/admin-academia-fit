@@ -1,0 +1,162 @@
+﻿@model IEnumerable<ProjetoAcademia.Models.Exercicio>
+
+@{
+    ViewData["Title"] = "Lista de Exercícios";
+}
+
+<div class="row">
+    <div class="col s10">
+        <h5>Detalhes</h5>
+    </div>
+    <div class="col s2">
+        <p>
+            <a asp-action="Index" asp-controller="Ficha" asp-route-AlunoId="@ViewData["AlunoId"]" class="btn btn-small grey darken-1">Voltar</a>
+        </p>
+    </div>
+</div>
+<hr />
+
+<table class="table striped hover highlight">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoriaExercicio)
+            </th>
+            <th>
+                Ações
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoriaExercicio.Nome)
+                </td>
+                <td>
+                    <a onclick="ExibirModal(@item.ExercicioId, @ViewData["FichaId"])" class="btn btn-small btn-floating cyan darken-4 ">
+                        <i class="material-icons">add</i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h4>Adicionar Exercício</h4>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="Frequencia" type="text" class="validate" />
+                <label for="Frequencia">Frequência</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="Repeticoes" type="text" class="validate" />
+                <label for="Repeticoes">Repetições</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="Carga" type="text" class="validate" />
+                <label for="Carga">Carga</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <a class="modal-close btn green accent-4">Não</a>
+        <a class="btn red accent-4 btnConfirmar">Sim</a>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".modal").modal();
+        });
+
+        function ExibirModal(exercicioId, fichaId) {
+            $("#modal").modal("open");
+
+            $(".btnConfirmar").on('click', function () {
+                var frequencia = parseInt($("#Frequencia").val());
+                var repeticoes = parseInt($("#Repeticoes").val());
+                var carga = parseInt($("#Carga").val());
+
+                if ((Number.isInteger(frequencia) && frequencia > 0)
+                    && (Number.isInteger(repeticoes) && repeticoes > 0)
+                    && (Number.isInteger(carga) && carga > 0)) {
+
+                    $.ajax({
+                        method: "POST",
+                        url: "/Exercicio/AdicionarExercicio",
+                        data: {
+                            ExercicioId: exercicioId,
+                            frequencia: frequencia,
+                            repeticoes: repeticoes,
+                            carga: carga,
+                            FichaId: fichaId
+                        },
+                        success: function (data) {
+                            if (data) {
+                                $("#modal").modal("close");
+                                $("#modal").modal("destroy");
+                                $(".modal").modal("");
+
+                                $(".btnConfirmar").unbind("click");
+                                $("#Frequencia").val("");
+                                $("#Repeticoes").val("");
+                                $("#Carga").val("");
+
+                                M.toast({
+                                    html: 'Exercício adicionado com sucesso;'
+                                });
+                            } else {
+                                $("#modal").modal("close");
+                                $("#modal").modal("destroy");
+                                $(".modal").modal("");
+
+                                $(".btnConfirmar").unbind("click");
+                                $("#Frequencia").val("");
+                                $("#Repeticoes").val("");
+                                $("#Carga").val("");
+
+                                M.toast({
+                                    html: 'Exercício já existe.'
+                                });
+                            }
+                        }
+                    });
+                } else {
+                    $("#modal").modal("close");
+                    $("#modal").modal("destroy");
+                    $(".modal").modal("");
+
+                    $(".btnConfirmar").unbind("click");
+                    $("#Frequencia").val("");
+                    $("#Repeticoes").val("");
+                    $("#Carga").val("");
+
+                    M.toast({
+                        html: 'Informações inválidas.'
+                    });
+                }
+
+            });
+        }
+    </script>
+}

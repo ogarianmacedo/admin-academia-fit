@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProjetoAcademia.Interfaces;
 using ProjetoAcademia.Models;
+using Rotativa.AspNetCore;
 
 namespace ProjetoAcademia.Controllers
 {
@@ -34,13 +35,24 @@ namespace ProjetoAcademia.Controllers
 
         public async Task<IActionResult> Details(int FichaId)
         {
-            var ficha = await _repositorio.BuscarFichaPeloAlunoId(FichaId);
+            var ficha = await _repositorio.BuscarFichaAlunoPorId(FichaId);
             if (ficha == null)
             {
                 return NotFound();
             }
 
             return View(ficha);
+        }
+
+        public async Task<IActionResult> VisualizarPDF(int FichaId)
+        {
+            var ficha = await _repositorio.BuscarFichaAlunoPorId(FichaId);
+            if (ficha == null)
+            {
+                return NotFound();
+            }
+
+            return new ViewAsPdf("PDF", ficha) { FileName = "Ficha.PDF" };
         }
 
         public IActionResult Create(int AlunoId)

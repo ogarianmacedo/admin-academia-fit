@@ -21,7 +21,6 @@ namespace ProjetoAcademia.Controllers
             _repositorio = repositorio;
         }
 
-        // GET: CategoriaExercicio
         public async Task<IActionResult> Index()
         {
             return View(_repositorio.BuscarTodos());
@@ -77,10 +76,10 @@ namespace ProjetoAcademia.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<JsonResult> Delete(int id)
         {
             await _repositorio.Excluir(id);
-            return RedirectToAction(nameof(Index));
+            return Json("Categoria excluída com sucesso.");
         }
 
         public async Task<JsonResult> CategoriaExiste(string nome, int CatExercicioId)

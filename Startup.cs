@@ -41,6 +41,7 @@ namespace ProjetoAcademia
             services.AddTransient<IObjetivoRepositorio, ObjetivoRepositorio>();
             services.AddTransient<IAlunoRepositorio, AlunoRepositorio>();
             services.AddTransient<IFichaRepositorio, FichaRepositorio>();
+            services.AddTransient<IListaExercicioRepositorio, ListaExercicioRepositorio>();
 
             //configura http para utilizar sessões
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -52,7 +53,7 @@ namespace ProjetoAcademia
             //configura autenticação 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(opcoes => {
-                    opcoes.LoginPath = "/Administradores/Login";
+                    opcoes.LoginPath = "/Administrador/Login";
                 });
              
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
