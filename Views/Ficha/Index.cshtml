@@ -1,16 +1,16 @@
-﻿@model IEnumerable<ProjetoAcademia.Models.Aluno>
+﻿@model IEnumerable<ProjetoAcademia.Models.Ficha>
 
 @{
-    ViewData["Title"] = "Alunos Cadastrados";
+    ViewData["Title"] = "Fichas Cadastradas";
 }
 
 <div class="row">
     <div class="col s10">
-        <h5>Alunos Cadastrados</h5>
+        <h5>Fichas Cadastradas</h5>
     </div>
     <div class="col s2">
         <p>
-            <a asp-action="Create" class="btn btn-small cyan darken-4 ">
+            <a asp-action="Create" asp-route-AlunoId="@ViewBag.AlunoId" class="btn btn-small cyan darken-4">
                 Add Novo
             </a>
         </p>
@@ -22,22 +22,16 @@
     <thead>
         <tr>
             <th>
-                Nome
+                @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                Idade
+                @Html.DisplayNameFor(model => model.Cadastro)
             </th>
             <th>
-                Peso
+                @Html.DisplayNameFor(model => model.Validade)
             </th>
             <th>
-                Objetivo
-            </th>
-            <th>
-                Professor
-            </th>
-            <th>
-                Frequência Semanal
+                @Html.DisplayNameFor(model => model.Aluno)
             </th>
             <th>
                 Ações
@@ -49,31 +43,31 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.NomeCompleto)
+                    @Html.DisplayFor(modelItem => item.Nome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Idade)
+                    @Html.DisplayFor(modelItem => item.Cadastro)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Peso)
+                    @Html.DisplayFor(modelItem => item.Validade)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Objetivo.Nome)
+                    @Html.DisplayFor(modelItem => item.Aluno.NomeCompleto)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Professor.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FrequenciaSemanal)
-                </td>
-                <td>
-                    <a asp-action="Index" asp-controller="Ficha" asp-route-AlunoId="@item.AlunoId" class="btn btn-small btn amber darken-3">Fichas</a>
+                    <a asp-action="Details" asp-route-FichaId="@item.FichaId" class="btn btn-small btn amber darken-3">Visualizar</a>
 
-                    <a asp-action="Edit" asp-route-id="@item.AlunoId" class="btn btn-small btn-floating light-blue darken-4">
+                    <a asp-action="Listagem" asp-controller="Exercicio" asp-route-FichaId="@item.FichaId" asp-route-AlunoId="@item.AlunoId" class="btn btn-small btn amber darken-3">Exercicios</a>
+
+                    <a asp-action="VisualizarPDF" asp-route-FichaId="@item.FichaId" class="btn btn-small btn amber darken-3">
+                        <i class="material-icons">archive</i>
+                    </a>
+
+                    <a asp-action="Edit" asp-route-FichaId="@item.FichaId" class="btn btn-small btn-floating light-blue darken-4">
                         <i class="material-icons">create</i>
                     </a>
 
-                    <a onclick="ExibirModal(@item.AlunoId, '@item.NomeCompleto')" class="btn btn-small btn-floating red darken-4">
+                    <a onclick="ExibirModal(@item.FichaId, '@item.Nome')" class="btn btn-small btn-floating red darken-4">
                         <i class="material-icons">delete_forever</i>
                     </a>
                 </td>
@@ -85,7 +79,7 @@
 <div id="modal" class="modal">
     <div class="modal-content">
         <h4>Excluir Categoria</h4>
-        <p>Deseja excluir o/a aluno(a) <b class="nome"></b>?</p>
+        <p>Deseja excluir a ficha <b class="nome"></b>?</p>
     </div>
     <div class="modal-footer">
         <a class="modal-close btn green accent-4">Não</a>
@@ -107,7 +101,7 @@
             $(".btnConfirmar").on('click', function () {
                 $.ajax({
                     method: "POST",
-                    url: "/Aluno/Delete",
+                    url: "/Ficha/Delete",
                     data: { id: id },
                     success: function () {
                         location.reload();

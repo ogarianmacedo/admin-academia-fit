@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using ProjetoAcademia.Models;
 
 namespace ProjetoAcademia.Controllers
 {
+    [Authorize]
     public class AlunoController : Controller
     {
         private readonly IAlunoRepositorio _repositorio;
@@ -48,7 +50,7 @@ namespace ProjetoAcademia.Controllers
                 await _repositorio.Inserir(aluno);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ObjetivoId"] = new SelectList(_objetivoRepositorio.BuscarTodos(), "ObjetivoId", "Descricao", aluno.ObjetivoId);
+            ViewData["ObjetivoId"] = new SelectList(_objetivoRepositorio.BuscarTodos(), "ObjetivoId", "Nome", aluno.ObjetivoId);
             ViewData["ProfessorId"] = new SelectList(_professorRepositorio.BuscarTodos(), "ProfessorId", "Nome", aluno.ProfessorId);
             return View(aluno);
         }
@@ -60,7 +62,7 @@ namespace ProjetoAcademia.Controllers
             {
                 return NotFound();
             }
-            ViewData["ObjetivoId"] = new SelectList(_objetivoRepositorio.BuscarTodos(), "ObjetivoId", "Descricao", aluno.ObjetivoId);
+            ViewData["ObjetivoId"] = new SelectList(_objetivoRepositorio.BuscarTodos(), "ObjetivoId", "Nome", aluno.ObjetivoId);
             ViewData["ProfessorId"] = new SelectList(_professorRepositorio.BuscarTodos(), "ProfessorId", "Nome", aluno.ProfessorId);
             return View(aluno);
         }
@@ -79,7 +81,7 @@ namespace ProjetoAcademia.Controllers
                 await _repositorio.Atualizar(aluno);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ObjetivoId"] = new SelectList(_objetivoRepositorio.BuscarTodos(), "ObjetivoId", "Descricao", aluno.ObjetivoId);
+            ViewData["ObjetivoId"] = new SelectList(_objetivoRepositorio.BuscarTodos(), "ObjetivoId", "Nome", aluno.ObjetivoId);
             ViewData["ProfessorId"] = new SelectList(_professorRepositorio.BuscarTodos(), "ProfessorId", "Nome", aluno.ProfessorId);
             return View(aluno);
         }

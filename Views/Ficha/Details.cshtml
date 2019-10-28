@@ -1,0 +1,38 @@
+﻿@model ProjetoAcademia.Models.Ficha
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<div class="row">
+    <div class="col s10">
+        <h5>Detalhes</h5>
+    </div>
+    <div class="col s2">
+        <p>
+            <a asp-action="Index" asp-controller="Ficha" asp-route-AlunoId="@Model.AlunoId" class="btn btn-small grey darken-1">Voltar</a>
+        </p>
+    </div>
+</div>
+
+<div class="collection">
+    <div class="collection-item">
+        @await Component.InvokeAsync("DadosAluno", Model.AlunoId)
+    </div>
+
+    <div class="row collection-item">
+        <div class="col s6">
+            <p><strong>Cadastro: </strong> @Model.Cadastro</p>
+        </div>
+
+        <div class="col s6">
+            <p><strong>Validade: </strong> @Model.Validade</p>
+        </div>
+    </div>
+</div>
+
+<div class="collection">
+    <div class="collection-item">
+        @await Component.InvokeAsync("ListagemExercicioFicha", Model.FichaId)
+    </div>
+</div>

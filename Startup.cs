@@ -40,6 +40,7 @@ namespace ProjetoAcademia
             services.AddTransient<IProfessorRepositorio, ProfessorRepositorio>();
             services.AddTransient<IObjetivoRepositorio, ObjetivoRepositorio>();
             services.AddTransient<IAlunoRepositorio, AlunoRepositorio>();
+            services.AddTransient<IFichaRepositorio, FichaRepositorio>();
 
             //configura http para utilizar sessões
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

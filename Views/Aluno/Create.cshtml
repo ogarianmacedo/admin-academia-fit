@@ -1,53 +1,84 @@
 ﻿@model ProjetoAcademia.Models.Aluno
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastrar Aluno";
 }
 
-<h2>Create</h2>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="collection with-header c1">
+                <h5 class="collection-header c1">Cadastrar Aluno</h5>
 
-<h4>Aluno</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="NomeCompleto" class="control-label"></label>
-                <input asp-for="NomeCompleto" class="form-control" />
-                <span asp-validation-for="NomeCompleto" class="text-danger"></span>
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="red-text darken-3 center"></div>
+
+                    <div class="collection-item c1">
+                        <div class="row">
+                            <div class="input-field">
+                                <input asp-for="NomeCompleto" class="validate" id="Nome" />
+                                <label for="NomeCompleto">Nome Completo</label>
+                                <span asp-validation-for="NomeCompleto" class="red-text darken-3"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field">
+                                <input asp-for="Idade" class="validate" id="Nome" />
+                                <label for="Idade">Idade</label>
+                                <span asp-validation-for="Idade" class="red-text darken-3"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field">
+                                <input asp-for="Peso" class="validate" id="Nome" />
+                                <label for="Peso">Peso</label>
+                                <span asp-validation-for="Peso" class="red-text darken-3"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label for="ObjetivoId">Objetivo</label>
+                            <div class="input-field">
+                                <select asp-for="ObjetivoId" class="browser-default" asp-items="ViewBag.ObjetivoId"></select>
+                                <span asp-validation-for="ObjetivoId" class="red-text darken-3"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label for="ProfessorId">Professor</label>
+                            <div class="input-field">
+                                <select asp-for="ProfessorId" class="browser-default" asp-items="ViewBag.ProfessorId"></select>
+                                <span asp-validation-for="ProfessorId" class="red-text darken-3"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field">
+                                <input asp-for="FrequenciaSemanal" class="validate" id="Nome" />
+                                <label for="FrequenciaSemanal">Frequência Semanal</label>
+                                <span asp-validation-for="FrequenciaSemanal" class="red-text darken-3"></span>
+                            </div>
+                        </div>
+
+                        <div class="collection-item right">
+                            <input type="submit" value="Salvar" class="btn btn-small teal darken-3" />
+                            <a asp-action="Index" class="btn btn-small grey darken-1">Voltar</a>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="Idade" class="control-label"></label>
-                <input asp-for="Idade" class="form-control" />
-                <span asp-validation-for="Idade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Peso" class="control-label"></label>
-                <input asp-for="Peso" class="form-control" />
-                <span asp-validation-for="Peso" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ObjetivoId" class="control-label"></label>
-                <select asp-for="ObjetivoId" class ="form-control" asp-items="ViewBag.ObjetivoId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProfessorId" class="control-label"></label>
-                <select asp-for="ProfessorId" class ="form-control" asp-items="ViewBag.ProfessorId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="FrequenciaSemanal" class="control-label"></label>
-                <input asp-for="FrequenciaSemanal" class="form-control" />
-                <span asp-validation-for="FrequenciaSemanal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        })
+    </script>
+}

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ProjetoAcademia.Models
 {
@@ -10,6 +11,7 @@ namespace ProjetoAcademia.Models
         public int FichaId {get; set;}
 
         [Required(ErrorMessage = "Campo obrigatório")]
+        [Remote("FichaExiste", "Ficha", AdditionalFields = "FichaId")]
         public string Nome {get; set;}
 
         public DateTime Cadastro {get; set;}
