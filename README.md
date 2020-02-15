@@ -1,2 +1,2 @@
 # admin-academia-fit
-Controle de alunos p/ Academia  - ASP.NET CORE 2.1
+Projeto de estudo - controle de academia com ASP.NET CORE 2.1
