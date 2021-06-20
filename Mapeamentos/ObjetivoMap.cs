@@ -13,7 +13,6 @@ namespace ProjetoAcademia.Mapeamentos
         public void Configure(EntityTypeBuilder<Objetivo> builder)
         {
             builder.HasKey(o => o.ObjetivoId);
-
             builder.Property(o => o.Nome).IsRequired();
             builder.Property(o => o.Descricao).HasMaxLength(500).IsRequired();
 

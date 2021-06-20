@@ -33,6 +33,5 @@ namespace ProjetoAcademia.Models
             modelBuilder.ApplyConfiguration(new ObjetivoMap());
             modelBuilder.ApplyConfiguration(new ProfessorMap());
         }
-
     }
 }

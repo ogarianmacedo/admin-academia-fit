@@ -13,7 +13,6 @@ namespace ProjetoAcademia.Mapeamentos
         public void Configure(EntityTypeBuilder<CategoriaExercicio> builder)
         {
             builder.HasKey(c => c.CatExercicioId);
-
             builder.Property(c => c.Nome).IsRequired();
 
             builder.HasMany(c => c.Exercicios).WithOne(c => c.CategoriaExercicio).OnDelete(DeleteBehavior.Cascade);

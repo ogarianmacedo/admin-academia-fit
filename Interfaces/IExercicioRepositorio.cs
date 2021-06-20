@@ -11,6 +11,7 @@ namespace ProjetoAcademia.Interfaces
         new Task<IEnumerable<Exercicio>> BuscarTodos();
 
         Task<bool> BuscaExercicioPorNome(string nome);
+
         Task<bool> ExercicioExiste(string nome, int ExercicioId);
     }
 }

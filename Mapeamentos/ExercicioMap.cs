@@ -13,7 +13,6 @@ namespace ProjetoAcademia.Mapeamentos
         public void Configure(EntityTypeBuilder<Exercicio> builder)
         {
             builder.HasKey(e => e.ExercicioId);
-
             builder.Property(e => e.Nome).IsRequired();
 
             builder.HasOne(e => e.CategoriaExercicio).WithMany(e => e.Exercicios).HasForeignKey(e => e.CatExercicioId);

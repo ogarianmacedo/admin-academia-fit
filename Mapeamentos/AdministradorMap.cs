@@ -12,7 +12,6 @@ namespace ProjetoAcademia.Mapeamentos
         public void Configure(EntityTypeBuilder<Administrador> builder)
         {
             builder.HasKey(a => a.AdminId);
-
             builder.Property(a => a.Nome).IsRequired();
             builder.Property(a => a.Email).IsRequired();
             builder.Property(a => a.Senha).IsRequired();

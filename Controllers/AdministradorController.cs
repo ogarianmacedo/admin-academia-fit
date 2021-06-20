@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoAcademia.Interfaces;
+using ProjetoAcademia.Models;
 using ProjetoAcademia.ViewModels;
 
 namespace ProjetoAcademia.Controllers
@@ -15,12 +16,10 @@ namespace ProjetoAcademia.Controllers
     public class AdministradorController : Controller
     {
         private readonly IAdministradorRepositorio _repositorio;
-        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public AdministradorController(IAdministradorRepositorio repositorio, IHttpContextAccessor httpContextAccessor)
+        public AdministradorController(IAdministradorRepositorio repositorio)
         {
             _repositorio = repositorio;
-            _httpContextAccessor = httpContextAccessor;
         }
 
         [HttpGet]
@@ -63,6 +62,24 @@ namespace ProjetoAcademia.Controllers
         {
             await HttpContext.SignOutAsync();
             return RedirectToAction("Login");
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("AdminId,Nome,Email,Senha")] Administrador administrador)
+        {
+            if (ModelState.IsValid)
+            {
+                await _repositorio.Inserir(administrador);
+                return RedirectToAction("Index", "Professor");
+            }
+
+            return View(administrador);
         }
     }
 }

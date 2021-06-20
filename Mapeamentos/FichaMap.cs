@@ -13,7 +13,6 @@ namespace ProjetoAcademia.Mapeamentos
         public void Configure(EntityTypeBuilder<Ficha> builder)
         {
             builder.HasKey(f => f.FichaId);
-
             builder.Property(f => f.Nome).IsRequired();
             builder.Property(f => f.Cadastro).IsRequired();
             builder.Property(f => f.Validade).IsRequired();

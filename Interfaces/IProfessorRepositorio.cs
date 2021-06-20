@@ -9,6 +9,7 @@ namespace ProjetoAcademia.Interfaces
     public interface IProfessorRepositorio : IRepositorioGenerico<Professor>
     {
         Task<bool> VerificaProfessorPeloNome(string Nome);
+
         Task<bool> ProfessorExiste(string Nome, int ProfessorId);
     }
 }

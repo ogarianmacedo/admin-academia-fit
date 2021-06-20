@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\xampp\\htdocs\\ProjetoAcademia\\ProjetoAcademia\\ProjetoAcademia.csproj": {}
+    "C:\\Users\\Ogarian\\Desktop\\OGARIAN\\PROJETOS\\PUBLICOS\\admin_academia_fit\\ProjetoAcademia.csproj": {}
   },
   "projects": {
-    "C:\\xampp\\htdocs\\ProjetoAcademia\\ProjetoAcademia\\ProjetoAcademia.csproj": {
+    "C:\\Users\\Ogarian\\Desktop\\OGARIAN\\PROJETOS\\PUBLICOS\\admin_academia_fit\\ProjetoAcademia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\xampp\\htdocs\\ProjetoAcademia\\ProjetoAcademia\\ProjetoAcademia.csproj",
+        "projectUniqueName": "C:\\Users\\Ogarian\\Desktop\\OGARIAN\\PROJETOS\\PUBLICOS\\admin_academia_fit\\ProjetoAcademia.csproj",
         "projectName": "ProjetoAcademia",
-        "projectPath": "C:\\xampp\\htdocs\\ProjetoAcademia\\ProjetoAcademia\\ProjetoAcademia.csproj",
+        "projectPath": "C:\\Users\\Ogarian\\Desktop\\OGARIAN\\PROJETOS\\PUBLICOS\\admin_academia_fit\\ProjetoAcademia.csproj",
         "packagesPath": "C:\\Users\\Ogarian\\.nuget\\packages\\",
-        "outputPath": "C:\\xampp\\htdocs\\ProjetoAcademia\\ProjetoAcademia\\obj\\",
+        "outputPath": "C:\\Users\\Ogarian\\Desktop\\OGARIAN\\PROJETOS\\PUBLICOS\\admin_academia_fit\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\Ogarian\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -29,6 +31,7 @@
         },
         "frameworks": {
           "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +43,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "dependencies": {
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
@@ -68,10 +72,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

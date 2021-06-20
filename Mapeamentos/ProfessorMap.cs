@@ -13,7 +13,6 @@ namespace ProjetoAcademia.Mapeamentos
         public void Configure(EntityTypeBuilder<Professor> builder)
         {
             builder.HasKey(p => p.ProfessorId);
-
             builder.Property(p => p.Nome).IsRequired();
             builder.Property(p => p.Telefone).IsRequired();
             builder.Property(p => p.Turno).IsRequired();

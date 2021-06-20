@@ -13,7 +13,6 @@ namespace ProjetoAcademia.Mapeamentos
         public void Configure(EntityTypeBuilder<ListaExercicio> builder)
         {
             builder.HasKey(l => l.ListaExercicioId);
-
             builder.Property(l => l.Frequencia).IsRequired();
             builder.Property(l => l.Repeticoes).IsRequired();
             builder.Property(l => l.Carga).IsRequired();
